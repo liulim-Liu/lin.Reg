@@ -1,11 +1,12 @@
 Package: lin.Reg
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Univaraite or Multivariate Linear Regression
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: Limeng Liu
+Maintainer: Limeng Liu <liulim@umich.edu>
+Description: Simple linear regression model which can perform in
+    both univariate predictors, or multivariate predictors,
+    as well as finally return a summary of the model results.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
