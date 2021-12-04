@@ -73,11 +73,11 @@ lin.Reg <- function(Y, X, has_b0 = TRUE) { #function with a default setting assu
   SSR = SST - SSE #sum of square regression
   MSE = SSE/(n-q) #mean square errors
   R_2 = SSR/SST
-  Adj_R_2 = 1- MSE/(SSY/(n-1))
+  Adj_R_2 = 1- MSE/(SST/(n-1))
 
   # 2. variance matrix
   v_mat = solve(a, diag(MSE, q, q), tol = 0, transpose = FALSE)
-  std.error = c(sqrt(diag(variance_mat)))
+  std.error = c(sqrt(diag(v_mat)))
   t_statistic = beta[,, drop=TRUE] / std.error
   pt_value = 2 * pt(-abs(t_statistic), (n - q))
 

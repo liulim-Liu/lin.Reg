@@ -41,11 +41,11 @@ summary.lin.Reg <- function(lmod) {
                           col.names = c("Coefficients",
                                         "Std.error",
                                         "t value",
-                                        "P(<=t).value"))
+                                        "P_value"))
   coef_df$sig <- ""
-  coef_df$sig[coef_df$`P(<=t).value` <= 0.1] <- "*"
-  coef_df$sig[coef_df$`P(<=t).value` <= 0.05] <- "**"
-  coef_df$sig[coef_df$`P(<=t).value` <= 0.01] <- "***"
+  coef_df$sig[coef_df$P_value <= 0.1] <- "*"
+  coef_df$sig[coef_df$P_value <= 0.05] <- "**"
+  coef_df$sig[coef_df$P_value <= 0.01] <- "***"
 
   print(coef_df)
   cat("\n\nSignificance: '***': <= 0.01, '**': <= 0.05, '*': <= 0.1")
@@ -59,10 +59,10 @@ summary.lin.Reg <- function(lmod) {
 
   if(lmod$pf_value < 2.2e-16) {
     cat(sprintf("\nF-statistic: %.0f on %d and %d DF, p-value: < 2.2e-16",
-                lmod$F_statistic, (lmod$q-1),(lmod$n-lmod$q)), "\n")
+                lmod$F_statistic, (lmod$q-1),(lmod$n - lmod$q)), "\n")
   }else {
     cat(sprintf("\nF-statistic: %.6f on %d and %d DF, p-value: %f",
-                lm$F_statistic, (lmod$q-1),(lmod$n-lm$q),lmod$pf_value), "\n")
+                lmod$F_statistic, (lmod$q-1),(lmod$n - lmod$q), lmod$pf_value), "\n")
   }
 
   #5. Significance

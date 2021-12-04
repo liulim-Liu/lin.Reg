@@ -1,0 +1,50 @@
+---
+title: "example_real_data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{example_real_data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(lin.Reg)
+```
+
+This function can also be used for real world dataset. Use example dataset (gala in `library(faraway)`)
+
+```{r}
+## checking the sample dataset
+library(faraway)
+data(gala)
+head(gala)
+```
+## building univariate model
+```{r}
+# Y: Species
+# X: Endemics      
+
+lmodel <- lin.Reg(gala$Species, gala$Endemics)
+
+#display
+summary.lin.Reg(lmodel)
+```
+## building multivariate model
+```{r}
+# Y: Species
+# X: Endemics, Area, Nearest  
+
+X <- cbind(gala$Endemics, gala$Area, gala$Nearest)
+
+lmodel2 <- lin.Reg(gala$Species, X)
+
+#display
+summary.lin.Reg(lmodel2)
+```

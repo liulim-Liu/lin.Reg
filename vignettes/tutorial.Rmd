@@ -1,0 +1,97 @@
+---
+title: "tutorial"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{tutorial}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(lin.Reg)
+```
+
+## Decription of `lin.Reg`
+This is the function will you can perform univariate or multivariate linear regression models. A second function of `summary.lin.Reg` is also included for displaying the results of linear regression.
+
+## Examples
+### using for univariate
+```{r uni}
+set.seed(2021)
+X = rnorm(100)
+Y = X * 3 + rnorm(5)
+
+model_uni = lin.Reg(Y,X)
+```
+
+Using `summary.lin.Reg` to display the result:
+```{r}
+summary.lin.Reg(model_uni)
+```
+
+
+### using for multivariates
+```{r multi}
+set.seed(2021)
+X = matrix(rnorm(100), 50, 2)
+Y = matrix((X[,1]+ 5*X[,2] + rnorm(50,sd=2)), 50, 1)
+
+model_multi = lin.Reg(Y,X)
+```
+
+Using `summary.lin.Reg` to display the result:
+```{r}
+summary.lin.Reg(model_multi)
+```
+
+## Troubleshoot
+In same cases, the function will not perform correctly, several error message will then show up
+
+For example, if the response variable are provided more then 1 columns, which is not allowed in this model, a error message will show like this:
+```{r error_mess}
+set.seed(2021)
+X = matrix(rnorm(50), 5, 2)
+Y = matrix((X[,1]+ 5*X[,2] + rnorm(50,sd=2)), 100, 2)
+
+try(lin.Reg(Y,X))
+```
+
+
+## Benchmark
+### comparing with `lm()`
+```{r benchmart}
+X1 = rnorm(100)
+X2 = rnorm(100)
+X= cbind(X1,X2)
+
+Y = X1+ 5*X2 + rnorm(100,sd=5)
+
+benchmark <- bench::mark(lm(Y~X1+X2)$coefficients, 
+                     lin.Reg(Y,X)$coefficients)
+benchmark
+```
+
+Compare with the traditional linear regression model, the minimum and median bench time is much smaller, as well as the memory allocation needed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
