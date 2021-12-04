@@ -1,6 +1,7 @@
 # Univariate and Multivariate Linear Regression using `lin.Reg`
   <!-- badges: start -->
   [![R-CMD-check](https://github.com/liulim-Liu/lin.Reg/workflows/R-CMD-check/badge.svg)](https://github.com/liulim-Liu/lin.Reg/actions)
+  [![codecov](https://codecov.io/gh/liulim-Liu/lin.Reg/branch/master/graph/badge.svg)](https://codecov.io/gh/liulim-Liu/lin.Reg)
   <!-- badges: end -->
   
   
