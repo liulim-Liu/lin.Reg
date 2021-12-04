@@ -63,8 +63,9 @@ summary.lin.Reg(model_multi)
 #> [1] "Predictors are significantly associated with Response (p <= 0.05)"
 ```
 
-## to-do:
-2. fix the CMD error of no faraway model installation
-3. unit testing
+## Getting help
+Severl commands will be helpful for seeking helps: `help(lin.Reg)`, `help(summary.lin.Reg)`
+
+Or you can use `browseVignettes("lin.Reg")` for some detailed tutorials.
 
 
