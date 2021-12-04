@@ -1,5 +1,9 @@
 # Univariate and Multivariate Linear Regression using `lin.Reg`
-
+  <!-- badges: start -->
+  [![R-CMD-check](https://github.com/liulim-Liu/lin.Reg/workflows/R-CMD-check/badge.svg)](https://github.com/liulim-Liu/lin.Reg/actions)
+  <!-- badges: end -->
+  
+  
 ## Description
 
 `lin.Reg ` is a simplified version of R function lm(), which stands for linear regression, and performs for both univariate and multivaraite linear regression models.
