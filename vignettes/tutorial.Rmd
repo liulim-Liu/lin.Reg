@@ -33,7 +33,7 @@ model_uni = lin.Reg(Y,X)
 
 Using `summary.lin.Reg` to display the result:
 ```{r}
-summary.lin.Reg(model_uni)
+summary_lin.Reg(model_uni)
 ```
 
 
@@ -48,7 +48,7 @@ model_multi = lin.Reg(Y,X)
 
 Using `summary.lin.Reg` to display the result:
 ```{r}
-summary.lin.Reg(model_multi)
+summary_lin.Reg(model_multi)
 ```
 
 ## Troubleshoot
