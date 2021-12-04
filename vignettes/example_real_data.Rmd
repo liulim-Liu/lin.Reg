@@ -18,15 +18,14 @@ knitr::opts_chunk$set(
 library(lin.Reg)
 ```
 
-This function can also be used for real world dataset. Use example dataset (gala in `library(faraway)`)
+This function can also be used for real world dataset. Use example dataset (gala in `library(faraway)`) or direcly use the csv provided.
 
 ```{r}
 ## checking the sample dataset
-if (!require("faraway")) install.packages("faraway")
-library(faraway)
-data(gala)
+gala <- read.csv("gala.csv")
 head(gala)
 ```
+
 ## building univariate model
 ```{r}
 # Y: Species
