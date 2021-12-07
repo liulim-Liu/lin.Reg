@@ -11,7 +11,7 @@
 
 This package contains two functions:
 - `lin.Reg(Y,X,has_b0)` reads response and predictors and estimate the coefficient of each predictors.
-- `summary.lin.Reg(lmod)` reads the return value of `lin.Reg()` and display in a more organized manner. It also returns the evaluatio of the model, such as residual measures and goodness of fit.
+- `summary_lin.Reg(lmod)` reads the return value of `lin.Reg()` and display in a more organized manner. It also returns the evaluatio of the model, such as residual measures and goodness of fit.
 
 ## Installation
 ```r
@@ -35,7 +35,7 @@ Y = matrix((X[,1]+ 5*X[,2] + rnorm(50,sd=2)), 50, 1)
 model_multi = lin.Reg(Y,X)
 
 # display the summary
-summary.lin.Reg(model_multi)
+summary_lin.Reg(model_multi)
 
 #> Call:
 #> lin.Reg(Y = X * beta)
@@ -64,8 +64,10 @@ summary.lin.Reg(model_multi)
 ```
 
 ## Getting help
-Severl commands will be helpful for seeking helps: `help(lin.Reg)`, `help(summary.lin.Reg)`
+Use `help()` to find documentation of a function
 
-Or you can use `browseVignettes("lin.Reg")` for some detailed tutorials.
+For Example: `help(lin.Reg)`, `help(summary_lin.Reg)`
+
+Or you can use `browseVignettes("lin.Reg")` for some tutorials.
 
 
