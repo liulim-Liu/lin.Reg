@@ -12,5 +12,18 @@ test_that("F_statistic works", {
   conclusion = summary_lin.Reg(model)
 
   expect_equal("Predictors are significantly associated with Response (p <= 0.05)",
-               summary_lin.Reg(model))
+               conclusion)
+})
+
+test_that("F_statistic works_not_sig", {
+  set.seed(20211206)
+
+  Y <- rnorm(9)
+  X <- Y+rnorm(9,sd=10)
+  lmod <- lm(Y ~ X)
+  model <- lin.Reg(Y,X)
+  conclusion <- summary_lin.Reg(model)
+
+  expect_equal("Predictors are NOT significantly associated with Response (p > 0.05)",
+               conclusion)
 })
