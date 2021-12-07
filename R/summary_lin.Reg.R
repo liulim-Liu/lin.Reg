@@ -19,11 +19,11 @@ summary_lin.Reg <- function(lmod) {
 
   #2. Show the results summary
   cat("\nResiduals:\n")
-  lmod$residuals = round(lmod$residuals,5)
+  lmod$residuals <- round(lmod$residuals,5)
 
   if(length(lmod$residuals)<=10) {
     cat("\nAll Results are:\n")
-    names(lmod$residuals) = c(1:length(lmod$residuals))
+    names(lmod$residuals) <- c(1:length(lmod$residuals))
     print(lmod$residuals)
   } else {
     cat("\nSummary Statistics of residuals:\n")
